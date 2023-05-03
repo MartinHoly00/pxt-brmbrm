@@ -22,3 +22,23 @@ input.onButtonPressed(Button.AB, function () {
 //
 //
 //Použití posílání jednoho čísla (64bit) max. 8 jendobytovejch čísel nebo 4 2bytový atd. (asi 2 nebo 16 soustava)
+
+
+function pack(x: number, y: number, z: number): number
+{
+    let xmod = x+1024 //posun intervalu do kladných čísel
+    return 0
+}
+
+input.onButtonPressed(Button.A, function() {
+    let x = 1022
+    let y = -950
+    let z = 10
+
+radio.sendNumber(pack(x, y, z))
+})
+
+
+radio.onReceivedNumber(function(receivedNumber: number){
+    basic.showNumber(receivedNumber)
+})
