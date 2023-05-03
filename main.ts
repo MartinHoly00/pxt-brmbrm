@@ -27,6 +27,7 @@ input.onButtonPressed(Button.AB, function () {
 function pack(x: number, y: number, z: number): number
 {
     let xmod = x+1024 //posun intervalu do kladných čísel
+    xmod = Math.floor(xmod / 8) //redukce intervalu (haha)
     return 0
 }
 
