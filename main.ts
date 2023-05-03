@@ -1,7 +1,16 @@
 let leftI = 0
 let rightI = 0
 const speeds = [-100, -250,]
+basic.forever(function() {
 
+
+
+    
+})
+
+console.log(String.fromCharCode(64))
+console.log("@\dfjdg".charCodeAt(0))
+console.log("@\dfjdg".charCodeAt(1))
 
 
 
@@ -23,11 +32,16 @@ input.onButtonPressed(Button.AB, function () {
 //
 //Použití posílání jednoho čísla (64bit) max. 8 jendobytovejch čísel nebo 4 2bytový atd. (asi 2 nebo 16 soustava)
 
+// v pravidelnych intervalech nacitat data z axcelometru
+// kdyz pracujes z rosahy, extremy se neschodujou ??? co posunout interval do kladných čísel
+
 
 function pack(x: number, y: number, z: number): number
 {
     let xmod = x+1024 //posun intervalu do kladných čísel
     xmod = Math.floor(xmod / 8) //redukce intervalu (haha)
+    String.fromCharCode(64)
+    "@/asdaf".charCodeAt(1)
     return 0
 }
 
