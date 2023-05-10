@@ -45,15 +45,27 @@ function pack(x: number, y: number, z: number): number
     return 0
 }
 
-input.onButtonPressed(Button.A, function() {
-    let x = 1022
-    let y = -950
-    let z = 10
+radio.setGroup(213)
+radio.setFrequencyBand(7)
 
-radio.sendNumber(pack(x, y, z))
-})
 
 
 radio.onReceivedNumber(function(receivedNumber: number){
     basic.showNumber(receivedNumber)
+    if (receivedNumber == 1) {
+        PCAmotor.MotorRun(PCAmotor.Motors.M4, speeds[++rightI % speeds.length])
+        PCAmotor.MotorRun(PCAmotor.Motors.M1, speeds[++leftI % speeds.length])
+    
+    
+    }
+    if (receivedNumber == 2){
+        PCAmotor.MotorRun(PCAmotor.Motors.M4, -speeds[rightI % speeds.length])
+        PCAmotor.MotorRun(PCAmotor.Motors.M1, -speeds[leftI % speeds.length])
+
+    }
+    if (receivedNumber == 3) {
+        PCAmotor.MotorStop(PCAmotor.Motors.M1)
+        PCAmotor.MotorStop(PCAmotor.Motors.M4)
+    }
+
 })
